@@ -1,0 +1,8 @@
+a{
+	text-decoration : none;
+}
+
+#underline{
+	text-decoration: underline;
+	cursor: help;<!--corsor:鼠标样式,变成小手有两种方式,hand和pointer,但hand有浏览器兼容性问题,建议使用pointer-->
+}
