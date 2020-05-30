@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>引入CSS样式表的第二种方式：样式块</title>
+		<style type = "text/css">
+			/*
+			CSS可以这样注释，设置字体颜色为蓝色，大小24px
+			id选择器
+			*/
+		  #haha{
+			  font-size: 24px;
+			  color: blue;
+		  } 
+		  /*
+		  这种选择器叫做标签选择器，标签选择器作用范围比标签选择器广，但凡是这个标签都用这个颜色，div独占行，感觉不够灵活
+		  语法格式：
+		  标签名{
+			  样式名：样式值；
+			  样式名：样式值；
+			  样式名：样式值；
+			  ……
+		  }
+		  */
+		  div{
+			  background-color: aquamarine;
+			  width: 100px;
+			  height: 100px;
+			  border: 3px solid red;
+		  }
+		  /*
+		  类选择器，语法格式
+				.类名{
+					
+				}
+		  优点：跨标签
+		  class相同的标签可以认为是同一类标签
+		  */
+		 .MyClass{
+			 border: 3px solid orangered;
+			 font-size: 14px;
+			 color: blueviolet;
+			 width: 500px;
+		 }
+		  
+		</style>
+	</head>
+	<body>
+		<span id = "haha">haha</span>
+		
+		<div></div>
+		<div></div>
+		<div></div>
+		<br><br><br>
+		
+		<input type = "text" class = "MyClass"/>
+		<br><br><br><br>
+		
+		<select class = "MyClass">
+			<option>friut</option>
+			<option>meat</option>
+			<option>vegetables</option>
+		</select>
+	</body>
+</html>
