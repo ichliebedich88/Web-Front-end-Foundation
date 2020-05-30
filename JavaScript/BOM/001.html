@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM编程:window的open和close</title>
+        
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+        BOM编程中：window对象是顶级对象，代表浏览器窗口
+        window有open和close方法，可以开启和关闭窗口
+        */
+        </script>
+        <input type = "button" value = "baidu-open(new window)" onclick="window.open('http://www.baidu.com')"/>
+        <input type = "button" value = "baidu-open(current window)" onclick="window.open('http://www.baidu.com','_self')"/>
+        <input type = "button" value = "baidu-open(blank window)" onclick="window.open('http://www.baidu.com','_blank')"/>
+        <input type = "button" value = "baidu-open(parent window)" onclick="window.open('http://www.baidu.com','_parent')"/>
+        <input type = "button" value = "baidu-open(top window)" onclick="window.open('http://www.baidu.com','_top')"/>
+        <input type = "button" value = "baidu-open(DOM window)" onclick="window.open('002.html')"/>
+        
+        
+        
+</html>

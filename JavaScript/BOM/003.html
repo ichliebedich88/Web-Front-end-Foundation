@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM编程:弹出消息框和确认框</title>
+        
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+        BOM编程中：window对象是顶级对象，代表浏览器窗口
+        window有open和close方法，可以开启和关闭窗口
+        */
+        function del(){
+            // var ok = window.confirm("确认删除吗？我是确认框");
+            // // alert(ok);
+            // if(ok){
+            //     alert("如果确认返回true就删除");
+            // }else{
+            //     alert("取消返回false就不删除");
+            // }
+            if(window.confirm("确认删除吗？我是确认框")){
+                alert("delete data......");
+            }else{
+                alert("do not del");
+            }
+        }
+        </script>
+        <!-- 删除操作的时候都要首先得到用户的确认，消息框和删除框的区别是，删除框会有一个返回值 -->
+        <input type = "button" value = "弹出消息框" onclick="window.alert('我是消息框')"/>
+        <input type = "button" value = "弹出确认框(删除)" onclick="del()"/>
+        
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM编程:location对象，设置地址栏上的地址</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        function goInternet(){
+            // var locationObj = window.location;//得到地址栏对象
+            // locationObj.href = "http://www.baidu.com";
+            // window.location = "http://www.126.com";
+            //document里面也有location
+            // document.location.href = "http://www.sina.com"; 
+            document.location = "http://www.sina.com"; 
+        }
+        </script>
+       <input type = "button" value = "新浪" onclick = "goInternet()"/>
+</html>
+
+<!-- 
+    目前通过浏览器向服务器发请求的方式：
+    表单form的提交
+    超链接
+    location（window & document）
+    window.open("URL")
+    直接在浏览器地址栏上输入URL回车
+    
+    以上所有请求方式均可以携带数据给服务器，只有通过表单提交的数据才是动态的，内部内容可以根据要求变化
+ -->
