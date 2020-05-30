@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>
+            thread、tbody和tfoot标签
+        </title>
+    </head>
+    <body>
+        <!--在table中不是必须的，只是为了操作表格更灵活，后期js代码编写更方便-->
+        <!--
+            将表格切割为三个部分，表头，表体，表脚，显示上没有太大的区别，只是后期便于操作
+            但可能三个部分之间的合并会受到影响，三个部分之间的单元格最好不要做合并操作，行合并不会被
+            影响，列合并会受影响
+        -->
+        复习&nbsp;&nbsp;&nbsp;&nbsp;空格
+        <table border = "1px" width = 70%>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>总成绩</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sun</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Oracle</td>
+                    <td>98</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>表脚</td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!--单元格合并，注意事项，row合并
+    删除单元格删除下面的单元格，column合并删除哪个都可以-->
+<html>
+    <head>
+        <title>
+            单元格合并，以及tr标签
+        </title>
+    </head>
+    <body>
+        th标签也是单元格，比td多的是加粗和居中
+        <table border = "1px" align = "center" width = 60%>
+            <tr>
+                <!--
+                <td>员工编号</td>
+                <td>员工薪资</td>
+                <td>员工名称</td>
+                -->
+                <th>员工编号</th>
+                <th>员工薪资</th>
+                <th>员工名称</th>
+                <th>员工部门</th>
+            </tr>
+            <tr>
+                <td rowspan = "3">11</td>
+                <td colspan = "2" align = "center">12</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td rowspan = "2">24</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td rowspan = "2">33</td>
+            </tr>
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!--超链接/热链接，重点
+		通过超链接可以从浏览器向服务器发送请求，请求request，
+		服务器向浏览器发送数据，响应：response
+		B/S结构的系统，每一个请求都会对应一个响应
+		用户点击超链接和用户在浏览器上输入url本质上没有区别，本质上都是向服务器发送请求
+		本质上没有区别，从操作上来讲，超链接使用更方便
+		-->
+		<p></p>可以写自己的常用链接自己建一个收藏夹，href后面的路径可以是绝对路径，
+		也可以是相对路径，可以是本地资源路径，也可以是网络中某个资源路径，超链接特点：
+		有下划线，鼠标停留在超链接上会显示小手形状，点击超链接之后能跳转页面<br><br><br></p>
+		<a href="http://www.baidu.com" title ="www.baidu.com"><img src="bd_logo1.png" width="10%"/></a>
+		<a href="http://news.baidu.com/">百度新闻</a>
+		<a href = "http://www.91.com/">哈哈</a>
+		<a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1">肺炎疫情</a>
+		<!--
+		href:hot references,热引用
+		href后面一定是一个资源的地址，超链接可以通过文字跳转也可以通过图片跳转，图片超链接
+		超链接中有一个属性：target，可取值
+		_blank：新窗口
+		_self：当前窗口，默认方式
+		_top：顶级窗口
+		_parent：父窗口
+		-->
+		<a href = "007.html">实心点链接当前路径下的其他文件，应该也可以链接到本地文件</a>
+		<a href = "http://www.hao123.com/" target="_blank">target中的_blank表示开启新窗口</a>
+	</body>
+</html>

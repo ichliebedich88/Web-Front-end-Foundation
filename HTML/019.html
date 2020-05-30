@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML中的div和span</title>
+		<!--
+		1、divh和span都可以称为图层
+		2、作用：为了保证页面可以灵活布局
+		3、其实最早的网页是用table进行布局的，但table不灵活，太死板
+		4、现代网页开发很少使用table进行布局了
+		5、图层就是一个一个的盒子，div嵌套div就是盒子嵌套盒子，div和span是可以定位的，只要定下div左上角的x y轴坐标即可
+		6、div和span的区别：默认情况下div会独占一行，sapn不会,块级元素和行级元素
+		-->
+	</head>
+	<body>
+		<div id = "DIV1">DIV1</div>
+		<div id = "DIV2">DIV2</div>
+		<span id = "SPAN1">SPAN1</span>
+		<span id = "SPAN1">SPAN1</span>
+		<div id = "div3">
+			<div id = "div31">
+				<div id = "div311">
+					嵌套
+				<!--可以嵌套-->	
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

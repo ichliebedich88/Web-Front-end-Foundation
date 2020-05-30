@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hidden控件1</title>
+	</head>
+	<body>
+		<form action = "https://www.baidu.com/" method = "post">
+			<!--隐藏域，网页上看不到，但是表单提交的时候数据会自动提交给服务器
+			，post表示浏览器地址栏上不显示，hidden是直接在浏览器上就不显示，但二者均会提交，
+			如果是hidden的话，大部分时间设置为post，但隐藏的文件不代表保密，可能是因为为了界面整洁和用户体验-->
+			<input type = "hidden" name = "userid" value = "111"/>
+			<input type = "text" name = "usercode"/>
+			<input type = "submit" value = "提交">
+		</form>
+	</body>
+</html>
