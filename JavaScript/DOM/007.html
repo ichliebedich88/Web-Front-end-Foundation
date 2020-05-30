@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:获取下拉列表选项的value</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        window.onload = function(){
+            document.getElementById("province").onchange = function(){
+                alert(this.value);
+            }
+        }
+        </script>
+        <!-- 获取下拉列表选项中的value -->
+        <!-- <select onchange = "alert(this.value)">
+            <option value = "">---请选择省份---</option>
+            <option value = "HeBei">河北</option>
+            <option value = "HeNan">河南</option>
+            <option value = "ShanDong">山东</option>
+            <option value = "ShanXi">山西</option>
+        </select> -->
+        <select id = "province">
+            <option value = "">---请选择省份---</option>
+            <option value = "HeBei">河北</option>
+            <option value = "HeNan">河南</option>
+            <option value = "ShanDong">山东</option>
+            <option value = "ShanXi">山西</option>
+        </select>
+        
+</html>

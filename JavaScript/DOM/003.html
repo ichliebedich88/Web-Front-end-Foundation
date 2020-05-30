@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM：正则表达式</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+        正则表达式
+        1、作用
+        Regular Expression
+        用于字符串格式匹配
+        2、独立学科
+        java、JS、Python等大部分编程语言都支持正则表达式
+        用来表示神经符号
+        目前使用最多
+        3、正则表达式掌握程度
+        常见的正则表达式要认识
+        简单的正则表达式要会写
+        能看懂
+        JS中怎么创建正则表达式对象：new对象
+            第一种创建方式：
+                var regExp = /正则表达式/flags；
+            第二种创建方式使用内置支持类RegExp：
+                var regExp = new RegExp("正则表达式","flags");
+            flags可取值：
+                g：全局匹配global
+                i：忽略大小写ignore
+                m：多行搜索（ES规范制定之后才支持m）
+        JS中创建正则表达式的方法：调用方法
+
+        4、常见的正则表达式
+        .：匹配除换行符以外的任意字符
+        \w：匹配字母或数字或下划线或汉字
+        \s：匹配任意的空白符
+        \d：匹配数字
+        \b：匹配单词的开始或结束
+        ^：匹配字符串的开始
+        $：匹配字符串的结束
+
+        *；零次或多次
+        +：一次或多次
+        ？：零次或一次
+        {n}：重复n次
+        {n，}：n次或多次
+        {n，m}：n到m次
+
+        \W:匹配除数字字母下划线汉字以外的字符
+        \S:匹配除空白符以外的字符
+        \D:匹配除数字以外的字符
+        \B:匹配单词中除开始结束以外的字符
+        [^x]：匹配不是x的字符
+        [^aeiou]：匹配不是aeiou以外的字符
+
+        5、简单的正则表达式
+        QQ号的正则表达式
+        ^[1-9][0-9]{4,}$
+        正则表达式中的（）优先级较高
+        [1-9]：1-9的任意数字，次数一次
+        [a-z0-9A-Z]：任意数字或字母，次数一次
+        [a-z0-9A-Z-]：任意数字或字母或‘-’，次数一次
+
+        邮箱地址匹配：
+        ^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+
+        正则表达式的test方法：
+        true/false = 正则表达式对象.test（用户填写的字符串）；
+
+
+
+        */
+       var regExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+       window.onload = function(){
+           document.getElementById("btn").onclick = function(){
+               if(regExp.test(document.getElementById("mytext").value)){
+                document.getElementById("emailError").innerText = "邮件格式合法";
+               }else{
+                document.getElementById("emailError").innerText = "邮件格式不合法";
+               }      
+           }
+           document.getElementById("mytext").onfocus = function(){
+               document.getElementById("emailError").innerText = "注册邮箱?";
+           }
+          
+               
+        }  
+        </script>
+        <span id = "emailError" style = "color:red;font-size: 18px;"></span>
+        <br>
+        <br>
+
+        <input type = "text" id = "mytext"/>
+        <input type = "button" id = "btn" value = "邮箱格式验证"/>
+        
+    </body>
+</html>

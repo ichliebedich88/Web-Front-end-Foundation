@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:显示网页时钟，周期函数selnterval</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+        关于JS中的内置支持类Date可以用来获取时间/日期
+        */
+        //获取当前时间
+        var nowTime = new Date();
+        //输出，格式不满意，转换成具有本地语言习惯的显示格式
+        // document.write(nowTime);//类似于JAVA中的System.out.println(nowTime);
+        // document.write(nowTime.toLocaleTimeString());//下午9:59:16
+        // document.write(nowTime.toLocaleString());//2020/4/9 下午9:59:47
+        //当以上格式均不是自己想要的，可以通过日期获取年月日，自定义日期格式
+        var t = new Date();
+        var year = t.getFullYear();//可以得到全年日期格式，2020
+        var month = t.getMonth();//月份0-11月
+        // var day = t.getDay();//得到的是一周的第几天，从第零天开始
+        var day = t.getDate();
+        var hour = t.getHours();
+        var minute = t.getMinutes();
+        var second = t.getSeconds();
+        var milliSecond = t.getMilliseconds();
+        document.write(year+"-"+(month+1)+"-"+day+"  ");
+        document.write('<br/>');
+        document.write('<br/>');
+        document.write(hour+":"+minute+":"+second+" "+milliSecond);//2020-3-5 12:54:55 173
+        //从1970到现在的毫秒数
+        document.write('<br/>');
+        document.write('<br/>');
+        var times = t.getTime();//一般会使用毫秒数当作时间戳
+        document.write(times);
+        document.write('<br/>');
+        document.write('<br/>');
+        //显示网页时钟
+        function displayTime(){
+            var time = new Date();
+            var localTime = time.toLocaleString();
+            document.getElementById("timeDiv").innerText = localTime;
+        }
+        //每隔一秒调用一次displyaTime（）函数
+        start = function(){
+            //从这行代码执行结束开始，则会不间断地每隔一秒调用一次displayTime（）
+            v = window.setInterval("displayTime()",1000);
+        }
+        
+        stop = function(){
+            window.clearInterval(v);
+        }
+        
+        </script>
+        <input type = "button" value = "显示系统时间" onclick = "start()"/> 
+        <input type = "button" value = "停止系统时间" onclick = "stop()"/> 
+        <div id = "timeDiv"></div>    
+</html>

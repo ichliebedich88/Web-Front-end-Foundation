@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:表单验证</title>
+       
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+        表单验证：
+        用户名不能为空
+        用户名必须在6-14位之间
+        用户名只能由数字字母组成，不能含有其他符号
+        密码和确认密码一致，邮箱地址合法
+        统一失去焦点验证
+        错误提示信息统一在span标签中提示，并且要求字体12号，红色
+        文本框中再次获得焦点后清空错误提示信息，如果文本框中数据不合法要求清空文本框的value
+        最终表单中所有项均合法方可提交
+        正则表达式匹配：用正则.test（字符串）；
+
+        */
+       var regExp = /[a-zA-Z0-9]{6,14}/; 
+       var result = false;
+       var regExp1 = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+       window.onload = function(){
+           document.getElementById("username").onblur = function(){
+            // document.getElementById("username").onkeydown = function(event){
+            // if(event.keyCode == 13)alert(typeof document.getElementById("username").value);
+            document.getElementById("username").value = document.getElementById("username").value.trim();
+            // if(event.keyCode == 13){//用户名最好去除空白再判断
+                // alert(document.getElementById("username").value.length);
+                if(!regExp.test(document.getElementById("username").value)){
+                    document.getElementById("error").innerText = "用户名长度不合法";
+                }else{
+                    document.getElementById("error").innerText = "";
+                }
+            // } 
+        //    }
+
+           }
+           
+           document.getElementById("username").onfocus = function(){
+               if(document.getElementById("error").innerText != ""){
+                document.getElementById("username").value = "";
+               }
+                document.getElementById("error").innerText = "";
+            }
+
+
+
+            document.getElementById("pwd2").onblur = function(){
+                    if(document.getElementById("pwd2").value != document.getElementById("pwd1").value){
+                        document.getElementById("error").innerText = "密码不一致"
+                    }
+                    if(document.getElementById("pwd2").value == ""){
+                        document.getElementById("error").innerText = "密码不能为空"
+                    }
+            }
+            
+            document.getElementById("pwd2").onfocus = function(){
+                if(document.getElementById("error").innerText != ""){
+                    document.getElementById("pwd2").value = "";
+                }
+                document.getElementById("error").innerText = "";
+            }
+
+            document.getElementById("email").onblur = function(){
+                if(regExp1.test(document.getElementById("email").value) == false){
+                    document.getElementById("error").innerText = "邮箱名不合法";
+                }else{
+                    document.getElementById("error").innerText = "";
+                }
+            }
+
+            document.getElementById("submitbtn").onclick = function(){
+                document.getElementById("username").focus();//不需要人工操作，纯代码触发事件，text对象的方法
+                document.getElementById("username").blur();
+
+                //这里有一个bug就是当用户名合法并且邮箱合法时，两个密码均为空也能提交，因为密码判断合法的条件是两个相等，而两个的值均为空时也会判断相等，所以要修改一下判断条件
+                document.getElementById("pwd2").focus();//不需要人工操作，纯代码触发事件，text对象的方法
+                document.getElementById("pwd2").blur();
+
+                document.getElementById("email").focus();//不需要人工操作，纯代码触发事件，text对象的方法
+                document.getElementById("email").blur();
+
+                if(document.getElementById("error").innerText == ""){
+                    document.getElementById("userForm").submit();
+                }  
+            }
+       }
+        
+        </script>
+        <!-- 这个表单提交应该使用post，这里为了检测所以用get -->
+        <span style = "font-size: 12px;color: red;" id = "error"></span>
+        <form method = "get" action = "http://www.baidu.com" id = "userForm">
+            用户名：<input type = "text" name = "username" id = "username"/>
+            <br/><br/>
+            密码：<input type = "password" name = "pwd1" id = "pwd1"/>
+            <br/><br/>
+            确认密码：<input type = "password" id = "pwd2"/><br/><br/>
+            邮箱：<input type = "text" name = "email" id = "email">
+            <br/><br/>
+            <input value = "注册" id = "submitbtn" type = "button">
+            <input value = "重置" id = "reset1" type = "reset">
+        </form>       
+</html>

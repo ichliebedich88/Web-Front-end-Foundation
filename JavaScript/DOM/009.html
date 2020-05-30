@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:javascript内置支持类Array</title>
+        
+    </head>
+    <body>
+        <script type = "text/javascript">
+        // var arr = ["haha",2,3.14,100,false]; 
+        // // alert(arr.length);//5
+        // arr[6] = ["test"];
+        // // alert(arr.length);//7
+        // for(var i = 0;i < arr.length;i ++){
+        //     document.write('<br/>');
+        //     /*
+        //     haha
+        //     2
+        //     3.14
+        //     100
+        //     false
+        //     undefined
+        //     test
+        //     */
+        //     document.write(arr[i]);
+        // }
+        // var arr2 = new Array(3);//长度为3
+        // var arr3 = new Array(3,2);//2
+        var arr = [1,2,3,4,5];
+        var str = arr.join("-");
+        alert(str);
+
+        arr.push(10);//在数组末尾添加10
+        alert(arr.join("-"));
+
+        var a = arr.pop(10);//将数组末尾10弹出,数组长度减一
+        alert(a);//注意JS中的数组可以自动模拟栈数据结构，后进先出原则，push压栈，pop弹栈，reverse反转
+        alert(arr.join("-"));//数组要求会遍历会创建
+
+        alert(arr.reverse().join("-"));
+       
+       
+        </script>
+        
+        
+</html>

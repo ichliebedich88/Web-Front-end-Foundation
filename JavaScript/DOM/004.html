@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:扩展字符串的trim函数</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        var regExp1 = /^(\s*)/;
+        var regExp2 = /(\s*)$/;
+        String.prototype.trim = function(){
+            //去除当前字符串的前后空白
+            //this代表当前字符串
+            return (this.replace(regExp1,"").replace(regExp2,"")); 
+        } 
+
+        window.onload = function(){
+            document.getElementById("btn").onclick = function(){
+                // var username = document.getElementById("mytext").value;
+                // username = username.trim();
+                // alert("--------->"+username+"<---------");
+                // 低版本的IE浏览器不支持trim函数，所以也可以自己对String扩展一个全新的trim（）函数
+                alert("--------->"+document.getElementById("mytext").value.trim()+"<---------");
+                
+            }
+        }
+
+        </script>
+        <input type = "text" id = "mytext"/>
+        <input type = "button" id = "btn" value = "获取用户名"/>
+        
+</html>
