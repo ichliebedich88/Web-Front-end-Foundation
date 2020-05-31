@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>稍微复杂一些的JSON对象</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+            1、什么是JSON：
+            JS Object Notation：简称JSON，JS对象标记，数据交换格式
+            最主要的作用是数据交换，一种标准的数据交换格式，90%一些行的系统，系统A与系统B交换数据的话，都是采用JSON
+            2、JSON是一种标准的轻量级的数据交换格式，特点是：
+            体积小，易解析
+            3、在实际的开发中有两种数据交换格式使用最多，其一是JSON另一个是XML
+            XML：体积较大，解析麻烦，优点是：语法严谨，通常银行用的比较多
+            W3C，XML和HTML有一个父亲，SGML：标准通用标记语言
+            HTML：页面展示，语法松散比较随意
+            XML：数据存储和数据描述，语法严格
+            4、语法格式：
+            var jsonObj = {
+                "属性名"：属性值，
+                "属性名"：属性值，
+                "属性名"：属性值，
+                "属性名"：属性值
+                   ……
+            }；
+        */
+        var user = {
+            "usercode":110,
+            "username":"zhangsan",
+            "sex":true,
+            "address":{
+                "province":"GuiZhou",
+                "city":"BiJie",
+                "zipcode":"551700"
+            },
+            "hobbys":["抽烟","喝酒","烫头"]
+        }
+        alert(user.username+" "+user.address.city);
+        //请设计一个json格式来描述班级中同学的信息以及总人数信息
+        //先设计及一个学生json存储每个同学的信息
+        //再设计一个班级json存储学生json和班级总人数信息
+        var student0 = {
+            sname:"zhangsan0",
+            sno:110
+        };
+        // var student1 = {
+        //     sname:"zhangsan1",
+        //     sno:111
+        // };
+        // var student2 = {
+        //     sname:"zhangsan2",
+        //     sno:112
+        // };
+        // var student3 = {
+        //     sname:"zhangsan3",
+        //     sno:113
+        // };
+        // var aClass = {
+        //     s0:student0,
+        //     s1:student1,
+        //     s2:student2,
+        //     s3:student3,
+        //     num:4
+        // }
+
+        var aClass = {
+            num:4,
+            students:[
+            {
+            sname:"zhangsan1",
+            sno:111
+            },
+            {
+            sname:"zhangsan2",
+            sno:112
+            },
+            {
+            sname:"zhangsan3",
+            sno:113
+            },
+            {
+            sname:"zhangsan4",
+            sno:114
+            }
+            ]
+        };
+        alert(aClass.students[1].sname)
+
+        </script>
+       
+</html>
+

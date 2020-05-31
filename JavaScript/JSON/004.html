@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON:JSON在开发中的使用，设置table的tbody</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+            //有json数据
+            var emp = {
+                "total":4,
+                "emps":[
+                    {"empno":"7369","eanme":"SMITH1","sal":800.0},
+                    {"empno":"7367","eanme":"SMITH2","sal":800.0},
+                    {"empno":"7368","eanme":"SMITH3","sal":800.0},
+                    {"empno":"7366","eanme":"SMITH4","sal":800.0}
+                ]
+            };
+            //希望把数据展示到table中
+            window.onload = function(){
+                document.getElementById("displayBtn").onclick = function(){
+                //    alert(111); 
+                document.getElementById("count").innerText = emp.total;
+                // for(i in emp.emps){
+                // }
+                HTML = "";
+                for(var i = 0;i < emp.emps.length;i ++){
+                   HTML += "<tr>";
+                   HTML += "<td>"+emp.emps[i].empno+"</td>";
+                   HTML += "<td>"+emp.emps[i].eanme+"</td>";
+                   HTML += "<td>"+emp.emps[i].sal+"</td>";
+                   HTML += "</tr>";
+                }
+                document.getElementById("empTbody").innerHTML = HTML;
+                }
+                /*
+                所以以后主要考虑的就是让JAVA返回JSON就可以了
+                返回JSON在前端代码中解析
+                JAVA和MySQL用JDBC连接
+                JAVA和前端HTML用JSON连接，通过eval函数解析或者按照上面的方式解析
+                以后使用纯JS的机会很少，一般都会使用JS框架
+                jQuery
+                XML
+                Servlet
+                JSP
+                AJAX
+                MVC
+                Maven
+                ……
+                */
+                以后学框架
+                学SSM三大框架
+                Spring
+                SpringMVC
+                MyBaties
+            }
+        </script>
+        <input type = "button" value = "显示员工信息列表" id = "displayBtn"/>
+        <h2>员工信息列表</h2>
+        <br/>
+        <hr>
+        <table border = "2px" width = 50%>
+            <tr>
+                <th>员工编号</th>
+                <th>员工姓名</th>
+                <th>员工薪资</th>               
+            </tr>
+            <tbody id = "empTbody">
+                <!-- <tr>
+                    <td>7369</td>
+                    <td>SMITH</td>
+                    <td>800.0</td>               
+                </tr>
+                <tr>
+                    <td>7369</td>
+                    <td>SMITH</td>
+                    <td>800.0</td>               
+                </tr>
+                <tr>
+                    <td>7369</td>
+                    <td>SMITH</td>
+                    <td>800.0</td>               
+                </tr>
+                <tr>
+                    <td>7369</td>
+                    <td>SMITH</td>
+                    <td>800.0</td>               
+                </tr> -->
+            </tbody>          
+        </table>
+        总记录条数：<span id = "count">0</span>    
+</html>
