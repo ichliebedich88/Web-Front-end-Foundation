@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML嵌入JS的第三种方式：引入外部独立的js文件</title>
+    </head>
+    <body>
+        <!--在需要的位置引入JS脚本文件
+        总结一下：src和href
+            图片img用src
+            超链接用href
+            样式表链入用href
+            脚本链入用src
+            统一个js文件可以被引入多次，但没必要
+            注意：<script type = "text/javascript" src = "JS/1.js"/>无法执行
+            结束的</script>标签必须有
+            第二种和第三种都是页面打开就执行
+        -->
+        <script type = "text/javascript" src = "JS/1.js">
+        window.alert("引入文件的同时可以写代码，但不会执行");
+        </script>
+        <script type = "text/javascript">
+            alert("html中引入js文件的同时也可以写脚本块");
+        </script>
+    </body>
+</html>

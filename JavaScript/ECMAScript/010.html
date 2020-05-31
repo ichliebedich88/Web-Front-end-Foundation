@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数据类型：Number</title>
+    </head>
+    <body>
+        
+        <script type = "text/javascript">
+        /*
+        1、Number包括哪些值：
+        -1，0，1，2，3，3.14，100 …… NaN，Infinity
+        整数，小数，整数，复数，不是数字，无穷大都属于Number类型
+
+        2、isNaN：true表示不是一个数字，false表示是一个数字
+
+        3、parseInt（）函数
+
+        4、parseFloat（）函数
+
+        5、Math.ceil（）函数，Math是一个数学类，作用向上取整，ceil意思是天花板，找大于等于某数字的最小整数
+
+
+
+        */
+        var v1 = 1;
+        var v2 = 3.14;
+        var v3 = -100;
+        var v4 = NaN;
+        var v5 = Infinity;
+
+        alert(typeof v1);
+        alert(typeof v2);
+        alert(typeof v3);
+        alert(typeof v4);
+        alert(typeof v5);//都是number
+
+        // 关于NaN表示Not a Number，什么时候结果表示一个NaN
+        // 运算结果本来应该是一个数字，但最后算完不是一个数字的时候，结果是NaN
+        var a = 10;
+        var b = "abc";
+        alert(a/b);//NaN,除号显然最后应该是一个数字，但运算，过程中导致最后不一定是一个数字，那么最后的结果是NaN
+
+        var c = "10";
+        var d = "abc";
+        alert(c + d);//10abc,因为+的结果既可以是数字也可以是字符串，有一个是字符串就会优先进行字符串拼接
+
+        // Infinity，当除数是0的时候结果为无穷大
+        var e = 10;
+        var f = 0;
+        alert(e / f);//Infinity
+
+        // 思考：在JS中，10/3 = ？
+        var g = 10;
+        var h = 3;
+        alert(g / h);//3.3333333333333335
+
+        // 关于isNaN函数
+        // 用法：isNaN（数据），结果是true/false。true表示不是数字，false表示是数字
+        // is not a number
+        var a = 10;
+        var b = "abdc";
+        alert(isNaN(a/b) ? "检查除数或者被除数是否是有效数字" : (a/b));
+
+        function sum(a,b){
+            if(isNaN(a) || isNaN(b)){
+                alert("参与运算的必须是数字");
+                return;
+            }
+            return a + b;
+        }
+        alert(sum(10,89));///99
+        sum("hsjha",27);//参与运算的必须是数字，就近原则
+
+        // parseInt（）,可以将字符串自动转换成数字，并且取整数位
+        alert(parseInt(3.9999999));//3
+        alert(parseInt("3.999999"));//3
+
+        // parseFloat（），将字符串自动转换成整数位
+        alert(parseFloat("10"));//10
+        alert(parseFloat("3.14")+1);//4.140000000000001
+        alert(parseFloat("3.2")+1);//4.2        
+
+        // Math.ceil（）
+        alert(Math.ceil("17.5"));//18
+        alert(Math.ceil("17"));//17
+
+
+        </script>
+       
+
+    </body>
+</html>

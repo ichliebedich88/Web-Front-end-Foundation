@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS代码的执行顺序</title>
+    </head>
+    <body onload = "ready()">
+        <!-- onload事件在页面全部元素加载完毕之后才会发生
+        所以在在整个html页面加载完毕之后，id已经存在，就调用ready函数，可以执行成功·
+        -->
+        <script type = "text/javascript">
+        /*
+        关于代码的执行顺序：
+        常用事件及注册事件的执行顺序：
+        */
+        // 注意获取的节点对象返回null，因为代码执行到此处的时候id还没有加载到内存
+         /*document.getElementById("btn1").onclick = function(){
+             alert("Hello");
+         }*/
+         function ready(){
+            document.getElementById("btn1").onclick = function(){
+             alert("Hello");
+            }
+         }
+        </script>
+        <!-- 注意以下代码不会执行，应该先有id才能注册事件，JS是顺序执行从上到下 -->
+        <input type = "button" value = "点击" id = "btn1"> 
+    </body>
+</html>

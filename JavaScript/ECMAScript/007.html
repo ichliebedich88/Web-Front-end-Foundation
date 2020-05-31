@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS的局部变量和全局变量</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        /*
+        全局变量：在函数体之外声明的变量叫全局变量，浏览器打开时声明，浏览器关闭时销毁，尽量少用，
+        因为全局变量会一直在浏览器的内存当中，耗费内存空间
+
+        局部变量：在函数体当中生声明的变量，包括一个函数的形参，局部变量的生命周期是，
+        函数开始执行时，局部变量的内存空间开辟，函数执行结束之后，局部变量的内存空间释放，
+        局部变量生命周期较短
+        */
+       var i = 100;
+       function accessI(){
+           alert("i="+i);
+       }
+       accessI();
+
+       var username = "全局变量";
+       accessUsername = function(){
+           var username = "局部变量";
+           alert("username = " + username);//username = 局部变量,就近原则，全局变量与局部变量同名的情况下优先访问局部变量
+       }
+       accessUsername();
+       //访问全局变量
+       alert("username = " + username);//username = 全局变量
+
+       function accessAge(){
+           var age = 20;
+           alert("age = " + age);
+       }
+       accessAge();
+       //alert("age = " + age);//age is not defined
+       //age调用函数完成就被释放，不能被访问到，在这里age相当于没有声明，就是错误
+
+       //以下语法比较奇怪
+       function myFunction(){
+           myName = "SunJie";
+           //当一个变量声明的时候如果没有使用var关键字，这个变量无论在哪里声明都是全局变量
+           //所以在调用函数以后，能访问到myName    
+           //亲测不调用函数不能访问到myName，应该是因为调用函数以后，给被识别为全局变量的变量分配了空间
+           //所以之后这个全局变量就能使用 
+       }
+       myFunction();
+       alert("my name is " + myName);//my name is SunJie
+        </script>
+    </body>
+</html>

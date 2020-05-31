@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS捕捉回车键</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+            window.onload  = function(){//页面开始加载注册，页面加载完执行
+                document.getElementById("mytext").onkeydown = function(event){//页面加载完注册，键盘按下执行
+                    //这个函数是事件发生以后浏览器调用，浏览器调用会传过来一个实参，实参就是事件对象
+                    // event只是一个形参名，负责接收这个事件对象，如果不写，事件对象也传过来，但自己拿不到这个对象，也无法使用
+                    //代表刚刚发生的事件，是一个局部变量，将来会接收一个事件对象
+                    // alert("haha");//键盘上任何一个键按下都会调用该回调函数
+                    // 获取键值,回车键键值是13，ESC键值得是27
+                    // alert(event);//[object KeyboardEvent],回调函数中最多写一个变量
+                    // alert(typeof event);//object
+                    // if(event.keyCode == 13){
+                    //     alert("Enetr");
+                    // }else{
+                    //    alert(event.keycode);
+                    // }
+                    //对于键盘事件对象来说，都有keycode属性用于获取键值
+                    // alert(event.keyCode);
+                    if(event.keyCode == 13){
+                        alert("正在进行验证。。。。。。。。");
+                    }
+                }
+            }
+        </script>
+        <input type="text" id = "mytext"/>
+    </body>
+</html>

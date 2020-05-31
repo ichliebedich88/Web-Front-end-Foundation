@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS的void运算符</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        // window.onload = function(){
+        //     document.getElementById("mytext").onkeydown = function(event){
+        //         if(event.keyCode == 13)
+        //         document.getElementById("mytext").type = "password";
+        //     }
+        // }
+        window.onload = function(){
+            document.getElementById("a1").onclick = function(){
+                document.getElementById("a1").href = "javascript:void(0)";//直接写void（0）系统会认为是一个路径，加上javascript：表示是一段JS代码
+                alert("Test1。。。");
+                return false;//在onclick里面加上return false和void（0）也是一样的效果
+            }
+            document.getElementById("a2").onclick = function(){
+                alert("Test2。。。");
+                return false;//在onclick里面加上return false和void（0）也是一样的效果
+            }
+            
+        }
+
+           
+        </script>
+        <!-- <input type = "text" id = "mytext"/> -->
+        <!-- 需求：既保留住超链接的样式，同时用户点击该超链接的时候执行一段JS代码，但页面不能跳转 
+             href后面什么也不写代表当前路径，所以
+             <a href = "" id = "a1">既保留住超链接的样式，同时用户点击该超链接的时候执行一段JS代码，但页面不能跳转</a>
+             点击之后会跳转到当前页面
+             void(表达式)原理是执行括号中的表达式但不返回任何结果
+             void（表达式）必须有表达式
+        -->
+        页面顶部
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href = "" id = "a1">既保留住超链接的样式，同时用户点击该超链接的时候执行一段JS代码，但页面不能跳转</a>
+        <br>
+        <a href = "" id = "a2">既保留住超链接的样式，同时用户点击该超链接的时候执行一段JS代码，但页面不能跳转</a>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+</html>

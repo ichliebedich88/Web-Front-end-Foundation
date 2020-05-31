@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS的控制语句</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+            /*
+            if
+            switch
+            while
+            do...while
+            for
+            break
+            continue
+            和java中一样
+
+            特殊
+            for in语句
+            用在数组中代表数组下标
+            用在对象中代表属性名
+            with
+            */
+            //创建js数组
+            var arr = [false,1,2,"abc",3.14];//JS中数组元素类型随意，元素个数随意，没有限制，JS自动扩容
+            //遍历数组
+            for(var i = 0;i < arr.length;i ++){
+                alert(arr[i]);
+            }
+            //for...in
+            for(var i in arr){//这里的i表示数组下标
+                //增强for循环？？？Java中for（int a:arr）{System.out.println(a);}
+                alert(arr[i]);
+            }
+            //for in语句可以遍历对象的属性·
+            User = function(name,pwd){
+                this.name = name;
+                this.pwd = pwd;
+            }
+            var user1 = new User("zhnagsan","888");
+            alert(user1.name+user1.pwd);
+            alert(user1["name"]+user1["pwd"]);
+
+            for(var i in user1){//i在这里代表属性名
+                // alert(i)
+                // alert(typeof i);
+                alert(user1[i]);
+            }
+
+            with(user1){
+                alert(name);
+                alert(pwd);
+                //alert(getName());
+            }
+
+            User.prototype.getName = function(){
+                return this.name;
+            }
+            with(user1){//自动在{}中属性或者方法之前添加user1.
+                alert(name);
+                alert(pwd);
+                alert(getName());
+            }
+            
+        </script>
+    </body>
+</html>

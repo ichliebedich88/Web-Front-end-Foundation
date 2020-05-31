@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JS嵌入HTML的第一种方式：内嵌</title>
+    </head>
+    <body>
+        <!--
+            1、实现的功能是用户点击以下按钮，弹出消息框
+            2、JS是一门事件驱动型的编程语言，依靠事件去驱动，然后执行对应的程序
+            在JS有很多事件，其中有一个事件叫做：鼠标单击：click，并且任何事件都会
+            对应一个事件句柄：onclick，【注意：事件和事件句柄的区别是，事件句柄是在事件之前加一个on】
+            而事件句柄是以HTML标签的属性存在的
+            3、onclick=“JS代码”，执行原理是什么？
+            页面打开的时候，js代码并不hi执行，只是把这段JS代码注册到按钮的click事件上，等这个按钮发生click事件
+            之后，注册在onclick后面的js代码会被浏览器自动调用
+            4、怎么使用JS代码弹出消息框呢
+            在JS中有一个内置的对象叫做window，全部小写，可以直接拿来使用，window代表的是浏览器对象，window对象有一个函数叫做：
+            alert，用法是：window.alert（“消息”）；这样就可以弹窗了
+            5、JS中的字符串可以使用双引号，也可以使用单引号。
+            6、JS中的一条语句结束之后可以使用分号，也可以不加
+        -->
+        <input type = "button" value = "hello1" onclick="window.alert('Hello JS1')"/><br>
+        <input type = "button" value = "hello2" onclick='window.alert("Hello JS2")'/><br>
+        <input type = "button" value = "hello3" onclick="window.alert('Hello JS31')
+                                                         window.alert('Hello JS32')
+                                                         window.alert('Hello JS33')"/><br>
+        <!--好消息。window.可以省略-->
+        <input type = button value = hello4 onclick="alert('Hello Js4')"/>
+    </body>
+</html>

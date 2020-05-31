@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<script type = "text/javascript">
+    /*
+    暴露在脚本块中的程序，在页面打开的时候执行，并遵循自上而下的顺序依次执行
+    不需要事件（页面打开），JS脚本块在一个页面当中可以出现多次，而且出现位置也没有要求，随意
+    */
+    window.alert("hello1 out");
+    window.alert("hello2 out");
+    </script>
+<html>
+    <head>
+        <title>HTML中嵌入JS代码的第二种方式:脚本块</title>
+        <!--样式块-->
+        <style type = "text/css">
+            .txt{
+                font-size: 17px;
+                color: blue;
+                border:2px solid crimson;
+            }
+        </style>
+         <script type = "text/javascript">
+            /*
+            暴露在脚本块中的程序，在页面打开的时候执行，并遵循自上而下的顺序依次执行
+            不需要事件（页面打开），可以放到body里面也可以放到head里面，还可以放到html外面
+            */
+            window.alert("hello1 head");
+            window.alert("hello2 head");
+        </script>
+        
+    </head>
+    <body>
+        <form action = "http://www.baidu.com/">
+            <input type = "text" name = "UserInfo" class = "txt">
+            <input type = "submit" onclick="alert('确定提交吗')">
+            <input type = "submit">
+        </form>
+        
+        <!--用脚本块
+        页面打开就执行
+        -->
+        <script type = "text/javascript">
+        /*
+        JS多行注释，和Java一样，css只能用这种多行注释，html只能用<!---->
+        暴露在脚本块中的程序，在页面打开的时候执行，并遵循自上而下的顺序依次执行
+        不需要事件（页面打开）
+        alert函数会阻塞整个html页面的加载，直到用户点击确定按钮
+        */
+        // JS代码的注释，单行注释
+        window.alert("hello1 body");
+        window.alert("hello2 body");
+       
+        </script>
+
+        <input type = "button" value = "我是按钮"/>
+    </body>
+</html>

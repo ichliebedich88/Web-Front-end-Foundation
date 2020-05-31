@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        JS中的变量
+    </title>
+</head>
+<body>
+    <script type = "text/javascript">
+    /*
+    回顾java中的变量
+    Java变量声明，Java变量赋值
+        变量名=变量值
+    java语言是一种强类型语言，怎么理解强类型，存在编译阶段，编译阶段就已经确定了代码中的数据类型
+    到最终类型释放都是这种类型，不可能变成其他类型
+    java中要求变量声明的时候是什么类型，以后永远是这种类型，编译期间编译器强行固定变量数据类型，
+    称为强类型语言
+
+    javascript中的变量？
+    怎么声明变量：
+        var 变量名
+    赋值：变量名 = 值；
+    js是一种弱类型语言，没有编译阶段，想怎么赋值就怎么赋值
+    变量可以随意赋值，类型也不限
+    var i= 100；
+    i = false；
+    i = new Object（）；
+    甚至可以不写分号，方法也非常随意
+    弱类型编程语言
+    i=undefined,undefined在js中是一个值，当一个变量在js中没有手动赋值的时候，系统默认赋值undefined
+    js中的变量如果不定义直接用就会报错
+    */
+    var i;
+    alert("i="+i)
+    alert(undefined);
+    var k = undefined;
+    alert(k+2)//NaN
+    // 一个变量没有声明/定义，直接访问
+    // 表面看不到，实际上由语法错误
+    //alert(j);//ReferenceError: j is not defined，火狐上f12查看错误信息
+    var a,b,c = 200;
+    alert(a);//undefined
+    alert(b);//undefined
+    alert(c);//200
+    a = false;
+    alert(a);
+    a = 20;
+    alert(a);
+    a = 'abcd';
+    alert(a);
+    </script>
+   
+</body>
+</html>

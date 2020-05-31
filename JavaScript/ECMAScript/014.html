@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>null\undefined\NaN区别以及等同和全等运算符</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+         /*
+         1、区别：数据类型不一致
+         2、null和undefined等同，但不全等
+
+
+         */
+         alert(typeof null);//object
+         alert(typeof undefined);//undefined
+         alert(typeof NaN);//number
+
+         alert(null == undefined);//true
+         alert(null == NaN);//false
+         alert(undefined == NaN);//false
+
+        // 在JS中有两个比较特殊的运算符，“==”和“===”
+        // ==是等同运算符，只判断值是否相同
+        // ===是全等运算符 ，既判断值是否相等，又判断数据类型是否相等
+        alert(null === undefined);//false
+        alert(null === NaN);//false
+        alert(undefined === NaN);//false
+
+        alert(1 == true);//true
+        alert(1 === true);//false
+        alert(Boolean(1) == true)//true
+
+
+
+        </script>
+    </body>
+</html>

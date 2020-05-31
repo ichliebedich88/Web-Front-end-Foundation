@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS代码的执行顺序</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        //等价于window.onload
+        // 页面加载的过程中将外层函数注册给load事件，页面加载完毕load事件才发生，并执行回调函数
+        // 函调函数执行过程中将内层函数注册到click事件
+        // 当btn1对应的click事件发生以后，内层函数被调用并执行
+        onload = function(){//两个回调函数，页面打开的时候只是把这个函数注册到事件上
+            document.getElementById("btn1").onclick = function(){//页面加载完成才能注册这个函数
+             alert("Hello");
+            }
+         }
+        </script>
+        <input type = "button" value = "点击" id = "btn1"> 
+    </body>
+</html>

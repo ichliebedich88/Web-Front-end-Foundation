@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS函数初步1</title>
+    </head>
+    <body>
+        <!--JS中的函数等同于Java中的方法
+        也是一段可以被重复利用的代码块，函数一般都是可以完成某个特定的功能，
+        回顾java中的方法
+        修饰符列表 返回值类型 方法名 （形式参数列表）{
+            ……
+            return；
+        }
+        JS中的变量是弱类型，那么函数怎么定义呢
+        语法格式：
+        不需要指定返回值类型
+        可以返回任何类型的值都可以
+        第一种：
+        function 函数名（形式参数列表）{
+            函数体；
+        }
+
+        函数名 = function（形式参数列表）{
+            函数体;
+        }
+        -->
+
+        <script type = "text/javascript">
+            // 两种方式定义函数,a、b都是局部变量，都是形参，变量名随意
+            // 函数必须手动调用才能执行
+            function sum1(a,b){
+                alert(a+b);
+            }
+            sum1(19,"abd");
+
+            sayHello = function(username){
+                alert("Hello "+username);
+            }
+            //sayHello("SunJie");
+        </script>
+        <input type = "button" value = "点击有惊喜" onclick="sayHello('SunJie');">
+        <br><br>
+        <input type = "text" id = "left">
+        +
+        <input type = "text" id = "right">
+        =
+        <!--
+        <input type = "text" value = alert(sum1(#left.value , #right.value))>
+        -->
+        
+        
+    </body>
+</html>
