@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>基本选择器使用</title>
+        <!-- <style type = "text/css">
+        div{
+            background-color: burlywood;
+            width:100px;
+            height:100px;
+            border: 3px solid red;
+        }
+        </style> -->
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        function fun01(){
+            var $obj = $("body div");
+            $obj.css("font-size","24px");
+        }
+        function fun02(){
+            var $obj = $("body>div");
+            $obj.css("color","red");
+        }//有问题
+        function fun03(){
+            var $obj = $("#div01+div");
+            $obj.css("color","yellow");
+        }
+        function fun04(){
+            var $obj = $("#div02~div");
+            $obj.css("color","green");
+        }
+        function fun05(){
+            var $obj = $("#div02").siblings("div");
+            $obj.css("color","blue")
+        }
+        </script>
+        <div id = "div01">我是div01</div>
+        <div id = "div02">我是div02</div>
+        <div id = "div03">我是div03
+            <div class = "sonOf03">
+                我是div03的子div31
+            </div>
+            <div class = "sonOf03">
+                我是div03的子div32
+            </div>
+        </div>
+        <div>我是div04</div>
+        <span>我是span标签</span>
+        <br>
+        <input type = "button" onclick="fun01()" value = "选择body中的所有div子标签"/>
+        <input type = "button" onclick="fun02()" value = "选择body下的直接div子标签"/>
+        <input type = "button" onclick="fun03()" value = "选择id为div01的下一个兄弟div"/>
+        <input type = "button" onclick="fun04()" value = "选择id为div02的后面所有的兄弟div"/>
+        <input type = "button" onclick="fun05()" value = "选择id为div02的所有兄弟div"/>
+        
+</html>

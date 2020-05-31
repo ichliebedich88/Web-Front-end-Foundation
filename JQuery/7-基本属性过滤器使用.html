@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>基本属性过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+            func01 = function(){
+                $("div[title]").css("background-color","orange");
+            }
+            func02 = function(){
+                $("div[title = 'test']").css("background-color","green");
+            }
+            func03 = function(){
+                $("div[title != 'test']").css("background-color","gray");
+            }
+            func04 = function(){
+                $("div[title ^= 'te']").css("background-color","red");
+            }
+            func05 = function(){
+                $("div[title $= 'st']").css("background-color","blue");
+            }
+            func06 = function(){
+                $("div[title *= 'es']").css("background-color","yellow");
+            }
+            func07 = function(){
+                $("div[title *= 'es'][id]").css("background-color","gold");
+            }
+            func08 = function(){
+                $("div[title *= 'es']:first").css("background-color","pink");
+            }
+
+        </script>
+        <h2>以下是DIV：</h2>
+        <br><br>
+        <div id = "div01" title = "test">我的序号是0</div>
+        <div id = "div02" Class = "c02" title = "myTest">我的序号是1</div>
+        <div>我的序号是2
+            <div id = "div03" Class = "sonOf02">我的序号是3</div>
+            <div Class = "sonOf02" title = "test">我的序号是4</div>
+        </div>
+        <div title = "testCase">我的序号是5</div>
+        <div>我的序号是6</div>
+        <br>
+        <h2>以下是SPAN：</h2>
+        <br><br>
+        <span id = "span01">我是span标签</span>
+        <br><br>
+        <button id = "btn01" onclick="func01()">选择包含title属性的div元素</button>
+        <button id = "btn02" onclick="func02()">选择title属性值为test的div元素</button>
+        <button id = "btn03" onclick="func03()">选择title属性值不为test的div元素</button>
+        <button id = "btn04" onclick="func04()">选择title属性值以‘te’开头的div元素</button>
+        <button id = "btn05" onclick="func05()">选择title属性值以‘st’结尾的div元素</button>
+        <button id = "btn06" onclick="func06()">选择title属性值包含‘es’的div元素</button>
+        <button id = "btn07" onclick="func07()">选择title属性值包含‘es’并且含有id属性的div元素</button>
+        <button id = "btn07" onclick="func08()">选择title属性值包含‘es’的第一个div元素</button>
+    </body>
+</html>

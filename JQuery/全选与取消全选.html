@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:复选框的全选和取消全选</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+        window.onload = function(){
+            var hobby = document.getElementsByName("hobby");
+            document.getElementById("allSelect").onclick = function(){
+                for(var i = 0;i < hobby.length;i ++){
+                       hobby[i].checked = document.getElementById("allSelect").checked;
+                }
+            }
+            for(var i = 0;i < hobby.length;i ++){
+                hobby[i].onclick = function(){
+                    var checkedSum = 0;
+                    for(var i = 0;i < hobby.length;i ++){
+                        if(hobby[i].checked)checkedSum ++;
+                    }
+                    document.getElementById("allSelect").checked = (checkedSum == hobby.length);
+                }
+            }
+        }
+
+        var classA = {
+            total:17,
+            students:[
+                {
+                    name:"zhangsan",
+                    no:111
+                },
+                {
+                    name:"lisi",
+                    no:112
+                },
+                {
+                    name:"wangwu",
+                    no:113
+                }
+            ]
+        }
+        </script>
+        <input type = "checkbox" id = "allSelect"/><br>
+        <input type = "checkbox" value = "抽烟" name = "hobby"/>抽烟<br>
+        <input type = "checkbox" value = "喝酒" name = "hobby"/>喝酒<br>
+        <input type = "checkbox" value = "烫头" name = "hobby"/>烫头<br>      
+</html>

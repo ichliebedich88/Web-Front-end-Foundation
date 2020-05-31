@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>工作状态属性过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        window.onload = function(){
+            //全选与全不选,标题行影响数据行选中状态
+            function main(){
+                $(":checkbox:first").click(func01);
+
+                $("table tr:gt(0)").mouseover(func03);
+                $("table tr:gt(0)").mouseout(func04);
+
+
+            }
+            func01 = function(){
+                $(":checkbox:gt(0)").each(myFunc1);
+                // $(":checkbox:gt(0)").prop("checked",$("checkbox:first").prop("checked"));
+            }
+            myFunc1 = function(index,domObj){
+                $(domObj).prop("checked",$(":checkbox:first").prop("checked"))
+            }
+        
+            //将选中的记录删除
+            function func02(){
+                var $obj = $(":checkbox:gt(0)")
+                for(var i = 0;i < $obj.length;i ++){
+                    if($obj[i].prop("checked")){
+                    $("td>:checkbox")
+                    }
+                }
+            }
+            //将鼠标悬停数据行背景颜色设置为红色,用this
+            function func03(){
+                $(this).css("background-color","gold");
+            }
+            function func04(){
+                $(this).css("background-color","white");
+            }
+            //根据被选中的checkbox个数判断删除按钮是否可用
+
+
+        }
+        
+
+        </script>
+        <center>
+            <table border = "2px">
+                <tr>
+                    <td>姓名</td>
+                    <td>职位</td>
+                    <td>工资</td>
+                    <td><input type = "checkbox"/>全选与全不选
+                        <input type = "button" value = "删除" disabled/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mike</td>
+                    <td>高级工程师</td>
+                    <td>5000</td>
+                    <td><input type = "checkbox"/>选择
+                    </td>
+                </tr>
+                <tr>
+                    <td>Smith</td>
+                    <td>测试开发工程师</td>
+                    <td>800</td>
+                    <td><input type = "checkbox"/>选择
+                    </td>
+                </tr> 
+                <tr>
+                    <td>Allen</td>
+                    <td>前端开发工程师</td>
+                    <td>1000</td>
+                    <td><input type = "checkbox"/>选择
+                    </td>
+                </tr>     
+            </table>
+        </center>
+        
+    </body>
+</html>

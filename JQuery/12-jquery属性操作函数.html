@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>工作状态属性过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        /*
+        val()功能函数体现的是一种重载的概念
+        $obj.val():读取jquery对象中第一个DOM对象的value值
+        $obj.val("值"):为jquery对象中所有的DOM对象的value属性值进行统一赋值
+        以下有两种赋值方法：
+        第一种将JQuery对象转换成DOM对象分别对其value值进行更改，循环遍历
+        第二种就是用功能函数val（）进行统一赋值
+        */
+            func01 = function(){
+               var $obj = $("#city>option:selected");
+               alert("value:"+$obj.val());
+               alert("title:"+$obj.attr("title"));
+               alert("prop:"+$obj.prop("selected"));
+               alert("innerText:"+$obj.text());
+            }
+           
+        </script>
+
+        <center>
+            <select id = "city" onchange="func01()">
+                <option value = "bj" title = "北京">北京</option>
+                <option value = "sh" title = "上海">上海</option>
+                <option value = "gz" title = "广州" selected>广州</option>
+                <option value = "sz" title = "深圳">深圳</option>
+                <option value = "sz" title = "苏州">苏州</option>
+            </select>
+        </center>
+        <br><br>
+    </body>
+</html>

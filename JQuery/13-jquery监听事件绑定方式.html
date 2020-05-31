@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>工作状态属性过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        // window.onload = function(){
+        //     var obj = document.getElementsByClassName("bro");
+        //     // alert(obj);
+        //     for(var i = 0;i < obj.length;i ++){
+        //         obj[i].onclick = function(){
+        //             alert("hello!");
+        //     }
+        //     }
+        // }
+       window.onload = function(){
+            $(":button").click(func);
+            function func(){
+                //this代表当前被单击的button对象,属于DOM对象
+                alert($(this).val());
+            }
+       }
+        
+        </script>
+        <input type = "button" Class = "bro" value = "我是大哥"/>
+        <input type = "button" Class = "bro" value = "我是二哥"/>
+        <input type = "button" Class = "bro" value = "我是三哥"/>
+        <!-- 为以上三个button绑定同一个监听事件 -->
+        <br><br>
+    </body>
+</html>

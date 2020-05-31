@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM编程:复选框的全选和取消全选</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+            function selectAll(){
+                //获得第一个checkbox选中状态
+                var flag = $("#selectAllBut").prop("checked");
+                //为所有checkbox选中状态设置
+                var $obj = $(".hobby");//存放当前定位的所有类名为hobby的DOM对象，JQuery函数会对其进行for循环遍历
+                //实现快速操作
+                $obj.prop("checked",flag);
+            }
+        </script>
+        <!-- 以下用JQuery实现简单的全选功能 -->
+        <input type = "checkbox" onclick = "selectAll()" id = "selectAllBut"/><br>
+        <input type = "checkbox" value = "抽烟" Class = "hobby"/>抽烟<br>
+        <input type = "checkbox" value = "喝酒" Class = "hobby"/>喝酒<br>
+        <input type = "checkbox" value = "烫头" Class = "hobby"/>烫头<br>      
+</html>

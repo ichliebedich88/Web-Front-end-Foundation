@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>基本选择器使用</title>
+        <style type = "text/css">
+        div{
+            background-color: burlywood;
+            width:100px;
+            height:100px;
+            border: 3px solid red;
+        }
+        </style>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        function selBtn01(){
+            var $obj = $("#one");
+            /*
+            css函数是jquery中的一个功能函数，负责将jquery对象中的样式属性进行统一的赋值
+            */
+            $obj.css("background-color","red");
+        }
+        function selBtn02(){
+            var $obj = $(".two");
+            $obj.css("background-color","blue");
+        }  
+        function selBtn03(){
+            var $obj = $("div");
+            $obj.css("background-color","yellow");
+        }
+        function selBtn04(){
+            var $obj = $("*");
+            $obj.css("background-color","green");
+        }
+        function selBtn05(){
+            var $obj = $("#one,span");
+            $obj.css("font-size","24px");
+        }
+        </script>
+
+        <div id = "one" class = "two"></div><br>
+        <div class = "two"></div><br>
+        <div></div><br>
+        <span>我是span标签</span>
+        <br><br>
+        <input type = "button" id = "btn01" value = "选择id为one的元素" onclick = "selBtn01()"/>
+        <input type = "button" id = "btn02" value = "选择class为two的元素" onclick = "selBtn02()"/>
+        <input type = "button" id = "btn03" value = "选择所有div元素" onclick = "selBtn03()"/>
+        <input type = "button" id = "btn04" value = "选择所有元素" onclick = "selBtn04()"/>
+        <input type = "button" id = "btn05" value = "选择id为one或标签为span的所有元素" onclick = "selBtn05()"/>
+        
+</html>

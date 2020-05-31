@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>功能函数remove和empty使用</title>
+        <style type = "text/css">
+            
+        </style>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+            function func01(){
+                $("#one").remove();
+            }
+            function func02(){
+                $("#two").empty();
+            }
+        </script>
+        张三:<select id = "one">
+            <option value = "sonOne">大儿子</option>
+            <option value = "sonTwo">小儿子</option>
+        </select><br><br>
+        李四:<select id = "two">
+            <option value = "sonOne">大儿子</option>
+            <option value = "sonTwo">小儿子</option>
+        </select><br><br>
+        <input type = "button" value = "张三全家死光" onclick="func01()"/>
+        <input type = "button" value = "李四儿子死光" onclick="func02()"/>
+    </body>
+</html>

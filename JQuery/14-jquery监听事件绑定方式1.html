@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>工作状态属性过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        func01 = function(){
+            var $obj = $(":button:lt(3)").bind("click",myFun01);
+        }
+        function myFun01(){
+            alert($(this).val())
+        }
+        func02 = function(){
+            var $obj = $(":button:lt(2)").unbind("click");
+        }
+        </script>
+        <input type = "button" Class = "bro" value = "我是大哥"/>
+        <input type = "button" Class = "bro" value = "我是二哥"/>
+        <input type = "button" Class = "bro" value = "我是三哥"/>
+        <!-- 为以上三个button绑定同一个监听事件 -->
+        <br><br>
+        <input type = "button" value = "为前三个button绑定onclick" onclick="func01()"/>
+        <input type = "button" value = "为前两个个button解除onclick绑定" onclick="func02()"/>
+    </body>
+    </body>
+</html>

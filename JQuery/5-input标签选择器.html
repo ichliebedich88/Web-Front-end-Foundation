@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>表单input标签选择器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        function func01(){
+            alert($(":text").val());
+            /*
+            val函数是JQuery对象中的功能函数，负责读取当前JQuery对象中第一个DOM的value属性值
+            */
+        }
+        function func02(){
+            alert($(":password").val());
+        }
+        function func03(){
+           var $obj = $(":radio");
+           //alert($obj.val());取的是JQuery对象（数组）中的第一个元组的value值
+           //JQuery对象转换成DOM对象
+           //我写的循环是输出选中的radio的value
+        //    for(var i = 0;i < $obj.length;i ++){
+        //        if($obj[i].checked)alert($obj[i].value);
+        //    }
+        //以下循环用于输出所有单选对应的value
+           //JQuery对象中的each函数,each这个函数是用来遍历JQuery对象中的DOM对象，每次读取一个下标值交给处理函数
+           $obj.each(myFun1);//myFun函数形式参数对应的含义顺序不能变，其余的函数名参数名可以变
+        }
+        function myFun1(index,domObj){
+            alert("第"+(index+1)+"个radio标签的value值是"+domObj.value);
+        }
+        function func04(){
+            alert($(":file").val());//C:\fakepath\stubhub-intern-平台开发工程师.docx
+        }
+        function func05(){
+            $(":checkbox").each(myFun2);
+        }
+        function myFun2(index,domObj){
+            if(domObj.checked){
+                alert("第"+(index+1)+"个选项被选中,该爱好是："+domObj.value);
+            }
+        }
+        </script>
+        <form action = "http://www.baidu.com">
+            用户名：<input type = "text" name = "username"/><br><br>
+            密&nbsp;&nbsp;码：<input type = "password" name = "pwd"><br><br>
+            性&nbsp;&nbsp;别：
+            <input type = "radio" name = "gender" value = "1" checked>男
+            <input type = "radio" name = "gender" value = "0">女<br><br>
+            照&nbsp;&nbsp;片：
+            <input type = "file" name = "photo"/><br><br>
+            兴&nbsp;&nbsp;趣：
+            <input type = "checkbox" name = "hobby" value = "music"/>音乐
+            <input type = "checkbox" name = "hobby" value = "food"/>美食
+            <input type = "checkbox" name = "hobby" value = "travel"/>旅游
+            <input type = "checkbox" name = "hobby" value = "shopping"/>购物
+            <br><br>
+            <input type = "submit" value = "提交"/>
+        </form>
+        <br><br>
+       <button id = "btn1" onclick="func01()">选择文本输入框并输出用户输入的值</button>
+       <button id = "btn2" onclick="func02()">选择密码输入框输出用户输入的密码</button>
+       <button id = "btn3" onclick="func03()">选择单选框的value属性值</button>
+       <button id = "btn4" onclick="func04()">选择文件上传框并输出用户选择的文件</button>
+       <button id = "btn5" onclick="func05()">选择复选框并输出用户选择的值</button>
+    </body>
+</html>

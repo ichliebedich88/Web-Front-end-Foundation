@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>基本过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+
+            func01 = function(){
+                $("div:first").css("color","red");
+            }
+            func02 = function(){
+                $("div:last").css("font-size","22px");
+            }
+            func03 = function(){//03、04在属性过滤器中讲
+               $("div[id!='div01']").css("background-color","gray");
+            }
+            func04 = function(){
+               $("div[Class != 'c02']").css("background-color","green");
+            }
+            func07 = function(){
+                $("div:eq(3)").css("color","blue");
+            }
+            func08 = function(){
+                $("div:lt(3)").css("color","green");
+            }
+            func09 = function(){
+                $("div:gt(3)").css("color","orange");
+            }
+        </script>
+        <h2>以下是DIV：</h2>
+        <br><br>
+        <div id = "div01">我的序号是0</div>
+        <div id = "div02" Class = "c02">我的序号是1</div>
+        <div>我的序号是2
+            <div Class = "sonOf02">我的序号是3</div>
+            <div Class = "sonOf02">我的序号是4</div>
+            <!-- 在这里取索引号小于3的div元素的时候，3，4都会被定位到，我猜想应该是因为它们是2的子标签
+            在取的时候因为2小于3所以会一次性取出2和2的子标签？？？
+            bug吗这是
+            -->
+        </div>
+        <div>我的序号是5</div>
+        <br>
+        <h2>以下是SPAN：</h2>
+        <br><br>
+        <span id = "span01">我是span标签</span>
+        <br><br>
+        <button id = "btn01" onclick="func01()">选择第一个div</button>
+        <button id = "btn02" onclick="func02()">选择最后一个div</button>
+        <button id = "btn03" onclick="func03()">选择id不是div01的div</button>
+        <button id = "btn04" onclick="func04()">选择Class不包含c02的div</button>
+        <button id = "btn05" onclick="func05()">选择索引号为奇数的div元素</button>
+        <button id = "btn06" onclick="func06()">选择索引号为偶数的div元素</button>
+        <button id = "btn07" onclick="func07()">选择索引号等于3的div元素</button>
+        <button id = "btn08" onclick="func08()">选择索引号小于3的div元素</button>
+        <button id = "btn09" onclick="func09()">选择索引号大于3的div元素</button>
+        <button id = "btn10" onclick="func10()">选择所有标题元素</button>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>工作状态属性过滤器使用</title>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+        /*
+        val()功能函数体现的是一种重载的概念
+        $obj.val():读取jquery对象中第一个DOM对象的value值
+        $obj.val("值"):为jquery对象中所有的DOM对象的value属性值进行统一赋值
+        以下有两种赋值方法：
+        第一种将JQuery对象转换成DOM对象分别对其value值进行更改，循环遍历
+        第二种就是用功能函数val（）进行统一赋值
+        */
+            func01 = function(){
+                //选择可用文本框并修改其值
+                var $obj = $(":text:enabled");
+                $obj.each(myFunc1);
+            }
+            function myFunc1(index,domObj){
+                domObj.value = "enabled0"+(index+1);
+                alert("第"+(index+1)+"个可用文本框内容修改后为"+domObj.value);
+            }
+            func02 = function(){
+                //选择可用文本框并修改其值
+                // var $obj = $(":text:disabled");
+                // $obj.each(myFunc2);
+                $(":text:disabled").val("disabled");
+            }
+            // function myFunc2(index,domObj){
+            //     domObj.value = "disabled0"+(index+1);
+            //     alert("第"+(index+1)+"个不可用文本框内容修改后为"+domObj.value);
+            // }
+            func03 = function(){
+                // 选择复选框中被选中的元素
+                var $obj = $(":checkbox:checked");
+                $obj.each(myFunc3);
+            }
+            function myFunc3(index,domObj){
+                alert("第"+(index+1)+"个被选中的复选框内容为"+domObj.value);
+            }
+            func04 = function(){
+                // 选择下拉列表中被选中的元素
+                //因为下拉列表中被选中的元素只有一个我们也可以直接输出，这里只是回忆一下each函数
+                var $obj = $("#city>option:selected");
+                $obj.each(myFunc4);
+                //alert("#city.val()");也可以直接这样，因为浏览器发现某个选项被选中以后会自动将这个值赋给当前下拉列表的vzalue值
+            }
+            function myFunc4(index,domObj){
+                // alert("第"+(index+1)+"个被选中的下拉列表内容为"+domObj.value);
+                alert("第"+(index+1)+"个被选中的下拉列表内容为"+$(domObj).val());//也可以将domObj转换成JQuery对象通过功能函数来获取值
+            }
+        </script>
+        <!-- 定义文本框 -->
+        文本01：<input type = "text" id = "text01" value = "value01"/><br>
+        文本02：<input type = "text" id = "text02" value = "value02" disabled/><br>
+        文本03：<input type = "text" id = "text03" value = "value03"/><br>
+        文本04：<input type = "text" id = "text04" value = "value04" disabled/><br>
+        <br>
+        <!-- 定义复选框 -->
+        <input type = "checkbox" name = "interest" value = "reading" checked/>读书
+        <input type = "checkbox" name = "interest" value = "food"/>美食
+        <input type = "checkbox" name = "interest" value = "travel" checked/>旅游
+        <input type = "checkbox" name = "interest" value = "music"/>音乐
+        <input type = "checkbox" name = "interest" value = "shopping" checked/>购物
+        <br><br>
+        <!-- 定义下拉列表 -->
+        <select id = "city">
+            <option value = "bj" title = "北京">北京</option>
+            <option value = "sh" title = "上海">上海</option>
+            <option value = "gz" title = "广州" selected>广州</option>
+            <option value = "sz" title = "深圳">深圳</option>
+            <option value = "sz" title = "苏州">苏州</option>
+        </select>
+        <br><br>
+        <button id = "btn01" onclick="func01()">选择可用文本框并修改其值</button>
+        <button id = "btn02" onclick="func02()">选择不可用文本框并修改其值</button>
+        <button id = "btn03" onclick="func03()">选择复选框中被选中的元素</button>
+        <button id = "btn04" onclick="func04()">选择下拉列表中被选中的元素</button>
+        
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>功能函数show和hide使用</title>
+        <style type = "text/css">
+            div{
+                color:ghostwhite;
+                width: 100px;
+                height: 100px;
+                background-color:deeppink;
+            }
+        </style>
+    </head>
+    <body>
+        <script type = "text/javascript" src = "jquery-3.5.0.js"></script>
+        <script type = "text/javascript">
+            func01 = function(){
+                $("div").hide(3000);//3s之内隐藏，由大到小，不写参数就是直接隐藏
+            }
+            func02 = function(){
+                $("div").show();
+            }
+        </script>
+        <div>
+            我是div01
+        </div><br>
+        <input type = "button" value = "隐藏div" onclick="func01()"/>
+        <input type = "button" value = "显示div" onclick="func02()"/>
+    </body>
+</html>
